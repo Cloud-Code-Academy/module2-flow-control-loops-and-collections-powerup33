@@ -14,7 +14,7 @@
 * in flow control, loops, and collections. By mastering these concepts, developers will be able to write more
 * efficient and effective code in their Salesforce projects.
 *
-* @author Your Name
+* @author Michelle Holman, Jr Developer
 */
 
 public with sharing class FlowControlLoopsCollections {
@@ -29,7 +29,12 @@ public with sharing class FlowControlLoopsCollections {
      * @return "Hello World!" if x greater than y, otherwise return null.
      */
     public static String helloWorld(Integer x, Integer y) {
-        return null; // Replace null with the variable you used to store the result
+        String result = 'Hello World!';
+        if (x == null || y == null || x <= y) {
+            return null;
+        } else {
+            return result; //PASS
+        }
     }
 
     /**
@@ -42,7 +47,12 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        return null; // Replace null with the variable you used to store the result
+        ///Boolean result = null;
+        if (age < 18) {
+        return 'false';
+        } else {
+        return 'true'; //PASS
+        }
     }
 
     /**
@@ -55,10 +65,13 @@ public with sharing class FlowControlLoopsCollections {
      * @return The maximum of the two numbers, or null if either number is null.
      */
     public static Integer findMax(Integer num1, Integer num2) {
-        // Initialize largestNum as null
-        Integer largestNum = null;
-
-        return null; // Replace null with the variable you used to store the result
+        if (num1 == null || num2 == null) {
+            return null;
+        } else if (num1 == num2) {
+           return num1; // that number
+        } else {
+        return Math.max(num1, num2); //PASS
+        }
     }
 
 
@@ -71,8 +84,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
-        return null; // Replace null with the variable you used to store the result
-    }
+        if (a == null) {
+            return null;
+        } else if (a > 0) {
+            return 'Positive';
+        } else if (a < 0) {
+            return 'Negative';
+        } else {
+            return 'Zero'; 
+        }
+    }           // This one is still in progress, haven't figured out what I'm doing wrong just yet...
 
     /**
      * Question 5
@@ -83,7 +104,13 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        if (a == null) {
+            return null;
+        } else if ((Math.mod(a, 2) == 0)) {
+            return 'Even';
+        } else {
+            return 'Odd'; //PASS 
+        } 
     }
 
     /**
